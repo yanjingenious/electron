@@ -272,8 +272,8 @@ jobs:
               Bump* ) echo 'export ELECTRON_RELEASE=1' >> $BASH_ENV
             esac
       - run:
-        name: Install Node.js
-        command: brew install node
+          name: Install Node.js
+          command: brew install node
       - run:
          name: Bootstrap
          command: |
@@ -356,8 +356,8 @@ jobs:
               Bump* ) echo 'export ELECTRON_RELEASE=1' >> $BASH_ENV
             esac
       - run:
-        name: Install Node.js
-        command: brew install node
+          name: Install Node.js
+          command: brew install node
       - run:
          name: Bootstrap
          command: |
@@ -443,4 +443,4 @@ workflows:
       - electron-osx-x64
   build-mas-x64:
     jobs:
-      - electron-mas-x64      
+      - electron-mas-x64
