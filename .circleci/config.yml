@@ -258,10 +258,10 @@ jobs:
           path: junit
 
   electron-osx-x64:
+    environment:
+      TARGET_ARCH: x64
     macos:
         xcode: "8.3.3"
-        environment:
-          TARGET_ARCH: x64
     steps:
       - checkout
       - run:
@@ -344,11 +344,11 @@ jobs:
           path: junit
 
   electron-mas-x64:
+    environment:
+      TARGET_ARCH: x64
+      MAS_BUILD: 1
     macos:
         xcode: "8.3.3"
-        environment:
-          TARGET_ARCH: x64
-          MAS_BUILD: 1
     steps:
       - checkout
       - run:
@@ -360,7 +360,7 @@ jobs:
             esac
       - run:
           name: Update brew so node install works
-          command: brew update            
+          command: brew update
       - run:
           name: Install Node.js
           command: brew install node
