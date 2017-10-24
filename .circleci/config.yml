@@ -262,10 +262,8 @@ jobs:
       TARGET_ARCH: x64
     macos:
         xcode: "8.3.3"
-    shell: /bin/bash --login -eo pipefail
     steps:
       - checkout
-      - run: echo ruby-2.4.1 > .ruby-version
       - run:
           name: Check for release
           command: |
@@ -273,6 +271,9 @@ jobs:
             case ${MESSAGE} in
               Bump* ) echo 'export ELECTRON_RELEASE=1' >> $BASH_ENV
             esac
+      - run:
+          name: Update brew so node install works
+          command: brew update
       - run:
           name: Install Node.js
           command: brew install node
@@ -345,10 +346,8 @@ jobs:
       MAS_BUILD: 1
     macos:
         xcode: "8.3.3"
-    shell: /bin/bash --login -eo pipefail
     steps:
       - checkout
-      - run: echo ruby-2.4.1 > .ruby-version
       - run:
           name: Check for release
           command: |
@@ -356,6 +355,9 @@ jobs:
             case ${MESSAGE} in
               Bump* ) echo 'export ELECTRON_RELEASE=1' >> $BASH_ENV
             esac
+      - run:
+          name: Update brew so node install works
+          command: brew update
       - run:
           name: Install Node.js
           command: brew install node
