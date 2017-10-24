@@ -318,9 +318,6 @@ jobs:
              fi
       - run:
           name: Test
-          environment:
-            MOCHA_FILE: junit/test-results.xml
-            MOCHA_REPORTER: mocha-junit-reporter
           command: |
              if [ "$ELECTRON_RELEASE" != "1" ]; then
                 echo 'Testing Electron debug build'
@@ -405,9 +402,6 @@ jobs:
              fi
       - run:
           name: Test
-          environment:
-            MOCHA_FILE: junit/test-results.xml
-            MOCHA_REPORTER: mocha-junit-reporter
           command: |
              if [ "$ELECTRON_RELEASE" != "1" ]; then
                 echo 'Testing Electron debug build'
