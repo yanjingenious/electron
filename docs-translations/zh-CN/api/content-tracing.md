@@ -7,7 +7,7 @@
 
 这个模块不具备web接口，所有需要我们在 Chrome 浏览器中打开 `chrome://tracing/` 来加载生成文件从而查看结果。
 
-**注意：** 你不应该使用这个模块，直到应用程序发出 `ready` 事件。
+**注意：** 你不应该在 `ready` 事件之前使用这个模块。
 
 ```javascript
 const {app, contentTracing} = require('electron')
